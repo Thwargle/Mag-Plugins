@@ -40,8 +40,12 @@ namespace Mag.Shared
 		[return: MarshalAs(UnmanagedType.Bool)]
 		public static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
 
-		//Gets window attributes
-		[DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetClientRect(IntPtr hWnd, ref RECT lpRect);
+
+        //Gets window attributes
+        [DllImport("user32.dll", SetLastError = true)]
 		public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
 		//Sets window attributes
